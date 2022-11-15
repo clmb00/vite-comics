@@ -4,15 +4,16 @@ export default{
   name: 'HeaderApp',
   data(){
     return{
+      currentPage: 'Comics',
       menuVoices: [
       {
         pageName: 'Characters',
         href: '#',
-        current: false
+        current: false //useless for now
       }, {
         pageName: 'Comics',
         href: '#',
-        current: true
+        current: false
       }, {
         pageName: 'Movies',
         href: '#',
@@ -61,7 +62,7 @@ export default{
       </div>
       <nav>
         <ul>
-          <li v-for="(item, index) in menuVoices" :key="index" :class="{'active' : item.current}"><a :href="item.href">{{item.pageName.toUpperCase()}}</a></li>
+          <li v-for="(item, index) in menuVoices" :key="index" :class="{'active' : (item.pageName == currentPage)}"><a :href="item.href" @click="currentPage = item.pageName">{{item.pageName.toUpperCase()}}</a></li>
         </ul>
       </nav>
     </div>
@@ -74,9 +75,8 @@ export default{
 @use '../styles/partials/mixin' as *;
 
 header{
-  height: 120px;
+  height: $footer-height;
   background-color: #fff;
-
 }
 
 .container{
@@ -85,11 +85,11 @@ header{
 }
 
 .logo{
-  width: 90px;
+  width: 80px;
 }
 
 ul{
-  height: 120px;
+  height: $footer-height;
 }
 
 li{
@@ -107,7 +107,7 @@ li{
       }
     }
   a{
-    font-size: .8rem;
+    font-size: .85rem;
     color: $black;
     &:hover{
       color: $blue;
