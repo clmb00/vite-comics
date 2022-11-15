@@ -4,6 +4,7 @@ import HeaderApp from "./components/HeaderApp.vue";
 import MainApp from "./components/MainApp.vue";
 import BlueSectionApp from "./components/BlueSectionApp.vue";
 import FooterApp from "./components/FooterApp.vue";
+import SocialFooter from "./components/SocialFooter.vue";
 
 export default{
   name: 'App',
@@ -11,7 +12,8 @@ export default{
     HeaderApp,
     MainApp,
     BlueSectionApp,
-    FooterApp
+    FooterApp,
+    SocialFooter
   }
 }
 </script>
@@ -22,6 +24,7 @@ export default{
   <MainApp />
   <BlueSectionApp />
   <FooterApp />
+  <SocialFooter />
 
 </template>
 

@@ -1,12 +1,7 @@
 <script>
 
-import SocialFooter from "./SocialFooter.vue";
-
 export default{
   name: 'FooterApp',
-  components:{
-    SocialFooter,
-  },
   data(){
     return{
       footerNavContent: [
@@ -116,7 +111,7 @@ export default{
 
   <footer>
     <div class="container">
-      <div id="top">
+      <div id="left">
         <nav>
           <div v-for="(section, k) in footerNavContent" :key="k">
             <h3>{{section.sectionName.toUpperCase()}}</h3>
@@ -126,8 +121,8 @@ export default{
           </div>
         </nav>
       </div>
-      <div id="bottom">
-        <SocialFooter />
+      <div id="right">
+        <img src="../assets/img/dc-logo-bg.png" alt="">
       </div>
     </div>
   </footer>
@@ -141,9 +136,22 @@ export default{
 
 footer{
   background-color: $l-black;
-  #top{
+  background-image: url("../assets/img/footer-bg.jpg");
+  .container{
+    position: relative;
+    overflow: hidden;
+  }
+  #left{
     padding-block: 25px;
     height: 320px;
+  }
+  #right{
+    position: absolute;
+    top: -50px;
+    right: 0;
+    img {
+      height: 450px;
+    }
   }
 }
 
