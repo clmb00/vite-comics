@@ -137,13 +137,14 @@ export default{
 footer{
   background-color: $l-black;
   background-image: url("../assets/img/footer-bg.jpg");
+  background-size: cover;
   .container{
     position: relative;
     overflow: hidden;
   }
   #left{
-    padding-block: 25px;
-    height: 320px;
+    padding-block: 20px;
+    height: $footer-height;
   }
   #right{
     position: absolute;
@@ -160,9 +161,8 @@ nav{
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-start;
-  height: 270px;
+  height: 100%;
   div{
-    width: fit-content;
     margin-right: 20px;
     h3{
       font-size: 1.2rem;
@@ -175,7 +175,6 @@ nav{
         a{
           color: $grey;
           font-size: .8rem;
-          font-weight: 500;
           &:hover{
             text-decoration: underline;
           }

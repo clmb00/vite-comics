@@ -40,7 +40,7 @@ export default{
         <div class="logo">
           <img :src="getPathImage(item.src)" :alt="item.name">
         </div>
-        <span>{{item.name.toUpperCase()}}</span>
+        <a href="#">{{item.name.toUpperCase()}}</a>
       </div>
     </div>
   </section>
@@ -55,7 +55,7 @@ section{
   background-color: $blue;
   color: white;
   .container{
-    height: 155px;
+    height: $blue-section-height;
     @include flex('vertical');
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -69,7 +69,7 @@ section{
         height: 50px;
       }
     }
-    span{
+    a{
       font-size: .8rem;
       white-space: nowrap;
     }
