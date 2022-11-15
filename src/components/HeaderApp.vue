@@ -75,7 +75,7 @@ export default{
 @use '../styles/partials/mixin' as *;
 
 header{
-  height: $footer-height;
+  height: $header-height;
   background-color: #fff;
 }
 
@@ -89,7 +89,7 @@ header{
 }
 
 ul{
-  height: $footer-height;
+  height: $header-height;
 }
 
 li{

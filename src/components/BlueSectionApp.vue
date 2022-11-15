@@ -4,7 +4,7 @@ export default{
   name: 'BlueSectionApp',
   data(){
     return{
-      collection: [
+      buyComics: [
         {
           name: 'Digital Comics',
           src: 'buy-comics-digital-comics.png'
@@ -36,8 +36,10 @@ export default{
 <template>
   <section>
     <div class="container">
-      <div v-for="(item, index) in collection" :key="index">
-        <img :src="getPathImage(item.src)" :alt="item.name">
+      <div v-for="(item, index) in buyComics" :key="index">
+        <div class="logo">
+          <img :src="getPathImage(item.src)" :alt="item.name">
+        </div>
         <span>{{item.name.toUpperCase()}}</span>
       </div>
     </div>
@@ -54,16 +56,18 @@ section{
   color: white;
   .container{
     height: 155px;
-    line-height: 155px;
-    @include flex('both');
+    @include flex('vertical');
+    flex-wrap: wrap;
     justify-content: space-evenly;
   }
   div{
-    img{
-      height: 50px;
-      aspect-ratio: 1/1;
-      margin-right: 8px;
-      vertical-align: middle;
+    @include flex('both');
+    .logo{
+      width: 50px;
+      margin-right: 10px;
+      img{
+        height: 50px;
+      }
     }
     span{
       font-size: .8rem;

@@ -21,10 +21,11 @@ export default{
 main{
   background-color: $black;
   color: white;
-  // debug
-  height: 140px;
-  line-height: 140px;
 
+  // debug
+  height: calc(100vh - $header-height - $blue-section-height - $footer-height - $footer-social-height);
+  min-height: 140px;
+  line-height: 140px;
   p{
     font-size: 1.8rem;
   }
