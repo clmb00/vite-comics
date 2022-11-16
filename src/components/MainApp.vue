@@ -12,6 +12,13 @@ export default{
   data(){
     return{
       cardsData,
+      loadedCards: 12
+    }
+  },
+  methods:{
+    incrementLoading(){
+      if (this.loadedCards + 6 > this.cardsData.length) this.loadedCards = this.cardsData.length;
+      else this.loadedCards += 6;
     }
   }
 }
@@ -24,10 +31,10 @@ export default{
     <div class="container">
       <h1>Current Seires</h1>
       <div class="card-group">
-        <cardMain v-for="(card, index) in cardsData" :key="index" :name="card.series" :thumbUrl="card.thumb"/>
+        <cardMain v-for="index in loadedCards" :key="index" :name="cardsData[index-1].series" :thumbUrl="cardsData[index-1].thumb"/>
       </div>
-      <div class="button-container">
-        <button>Load More</button>
+      <div class="button-container" v-on:click='incrementLoading'>
+        <button> Load More </button>
       </div>
     </div>
   </main>
