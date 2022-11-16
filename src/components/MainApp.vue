@@ -1,15 +1,36 @@
 <script>
 
+import cardMain from './CardMain.vue';
+
 export default{
-  name: 'MainApp'
+  name: 'MainApp',
+  components:{
+    cardMain
+  }
 }
 
 </script>
 
 <template>
+  <div id="jumbotron"></div>
   <main>
     <div class="container">
-      <p>--> Content goes here &lt;--</p>
+      <h1>Current Seires</h1>
+      <div class="card-group">
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+        <cardMain />
+      </div>
+      <div class="button-container">
+        <button>Load More</button>
+      </div>
     </div>
   </main>
 </template>
@@ -17,18 +38,60 @@ export default{
 <style lang="scss" scoped>
 
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixin' as *;
+
+#jumbotron{
+  background-image: url('../assets/img/jumbotron.jpg');
+  background-size: cover;
+  background-position: top;
+  height: $jumbo-height;
+}
 
 main{
   background-color: $black;
   color: white;
+}
 
-  // debug
-  height: calc(100vh - $header-height - $blue-section-height - $footer-height - $footer-social-height);
-  min-height: 140px;
-  line-height: 140px;
-  p{
-    font-size: 1.8rem;
+.container{
+  position: relative;
+}
+
+h1, button{
+  text-transform: uppercase;
+}
+
+h1{
+  font-size: 1.8rem;
+  padding: 10px 20px;
+  background-color: $blue;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+.card-group{
+  @include flex();
+  flex-wrap: wrap;
+  padding-block: 50px;
+  row-gap: 40px;
+}
+
+.button-container{
+  text-align: center;
+
+  button{
+    margin-bottom: 25px;
+    padding: 10px 50px;
+    border: none;
+    background-color: $blue;
+    font-size: .8rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+      filter: brightness(1.2);
+    }
   }
 }
+
 
 </style>
