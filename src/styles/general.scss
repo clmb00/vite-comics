@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import '/node_modules/@fontsource/ubuntu-condensed/index.css';
 
 *{
   margin: 0;
@@ -9,12 +9,6 @@
 
 body{
   font-family: 'Ubuntu Condensed', sans-serif;
-}
-
-.container{
-  width: 70%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 ul{
@@ -28,4 +22,10 @@ a{
 
 img{
   max-width: 100%;
+}
+
+.container{
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

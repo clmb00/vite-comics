@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/ubuntu-condensed": "^4.5.11",
     "vue": "^3.2.41"
   },
   "devDependencies": {

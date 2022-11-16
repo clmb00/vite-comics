@@ -1,53 +1,13 @@
 <script>
 
+import menuVoices from "../data/headerMenu";
+
 export default{
   name: 'HeaderApp',
   data(){
     return{
       currentPage: 'Comics',
-      menuVoices: [
-      {
-        pageName: 'Characters',
-        href: '#',
-        current: false //useless for now
-      }, {
-        pageName: 'Comics',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Movies',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Tv',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Games',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Collectibles',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Videos',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Fans',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'News',
-        href: '#',
-        current: false
-      }, {
-        pageName: 'Shop',
-        href: '#',
-        current: false
-      }
-      ]
+      menuVoices
     }
   }
 }
