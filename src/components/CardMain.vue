@@ -1,7 +1,11 @@
 <script>
 
 export default{
-  name: 'CardMain'
+  name: 'CardMain',
+  props:{
+    name: String,
+    thumbUrl: String
+  }
 }
 
 </script>
@@ -10,9 +14,9 @@ export default{
 
 <div class="card">
   <div class="cover">
-    <img src="#" alt="">
+    <img :src="thumbUrl" :alt="name">
   </div>
-  <h4>Title Comic</h4>
+  <h4>{{name}}</h4>
 </div>
 
 
@@ -28,9 +32,14 @@ export default{
 }
 
 .cover{
-  background-color: $blue;
   width: 100%;
   aspect-ratio: 1/1;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 h4{

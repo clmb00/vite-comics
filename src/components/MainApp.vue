@@ -2,10 +2,17 @@
 
 import cardMain from './CardMain.vue';
 
+import cardsData from '../data/dc-comics.json';
+
 export default{
   name: 'MainApp',
   components:{
     cardMain
+  },
+  data(){
+    return{
+      cardsData,
+    }
   }
 }
 
@@ -17,16 +24,7 @@ export default{
     <div class="container">
       <h1>Current Seires</h1>
       <div class="card-group">
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
-        <cardMain />
+        <cardMain v-for="(card, index) in cardsData" :key="index" :name="card.series" :thumbUrl="card.thumb"/>
       </div>
       <div class="button-container">
         <button>Load More</button>
